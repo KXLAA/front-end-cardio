@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 const Container = styled.section`
   display: grid;
@@ -63,35 +63,42 @@ const Links = styled.div`
   }
 `;
 
-const Projects = () => {
+const Projects = ({ projects }) => {
+  console.log(projects);
+
   return (
     <Container>
-      <Card>
-        <Header>
-          <Indicators />
-          <Tech>
-            <p>HTML</p>
-            <span>*</span>
-            <p>CSS</p>
-            <span>*</span>
-            <p>JAVASCRIPT</p>
-          </Tech>
-        </Header>
-        <Image
-          src="/fiber-landing-page.gif"
-          alt="Picture of the author"
-          width={1400}
-          height={900}
-          layout="responsive"
-        />
-        <Description>
-          <h2>Fiber Landing Page.</h2>
-          <Links>
-            <a href="/">Code</a>
-            <a href="/">Demo</a>
-          </Links>
-        </Description>
-      </Card>
+      {projects.map((project) => (
+        <Card key={project.id}>
+          <Header>
+            <Indicators />
+            <Tech>
+              <p>HTML</p>
+              <span>*</span>
+              <p>CSS</p>
+              <span>*</span>
+              <p>JAVASCRIPT</p>
+            </Tech>
+          </Header>
+
+          <video autoPlay loop muted playsinline>
+            <source src={project.demowebm.url} type="video/webm" />
+            <source src={project.demomp4.url} type="video/mp4" />
+          </video>
+
+          <Description>
+            <h2>{project.name}</h2>
+            <Links>
+              <a href={project.codeLink} target="_blank" rel="noreferrer">
+                Code
+              </a>
+              <a href={project.liveLink} target="_blank" rel="noreferrer">
+                Demo
+              </a>
+            </Links>
+          </Description>
+        </Card>
+      ))}
     </Container>
   );
 };
