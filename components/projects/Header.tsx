@@ -57,7 +57,7 @@ const Kola = styled.a`
   font-weight: 700;
 `;
 
-const Header = () => {
+const Header = ({ length }) => {
   return (
     <>
       <Container>
@@ -73,7 +73,7 @@ const Header = () => {
           </p>
         </Title>
         <Count>
-          <Number>20</Number>
+          <Number>{length}</Number>
           <Text>PROJECTS</Text>
         </Count>
       </Container>

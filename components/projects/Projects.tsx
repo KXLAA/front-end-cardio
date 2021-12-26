@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import Image from 'next/image';
+import { ProjectsProps } from 'types/types';
 
 const Container = styled.section`
   display: grid;
@@ -63,7 +63,7 @@ const Links = styled.div`
   }
 `;
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects }: ProjectsProps) => {
   console.log(projects);
 
   return (
@@ -73,15 +73,16 @@ const Projects = ({ projects }) => {
           <Header>
             <Indicators />
             <Tech>
-              <p>HTML</p>
-              <span>*</span>
-              <p>CSS</p>
-              <span>*</span>
-              <p>JAVASCRIPT</p>
+              {project.category.map((cata) => (
+                <>
+                  <p>{cata}</p>
+                  <span>*</span>
+                </>
+              ))}
             </Tech>
           </Header>
 
-          <video autoPlay loop muted playsinline>
+          <video autoPlay loop muted>
             <source src={project.demowebm.url} type="video/webm" />
             <source src={project.demomp4.url} type="video/mp4" />
           </video>
