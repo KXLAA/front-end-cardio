@@ -5,7 +5,7 @@ import { ProjectsProps } from 'types/types';
 const Container = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
 `;
 
 const Card = styled.div`
@@ -13,6 +13,8 @@ const Card = styled.div`
   width: 100%;
   background-color: #161616;
   border-radius: 16px;
+  -webkit-box-shadow: 3px 4px 15px -8px rgba(0, 0, 0, 0.71);
+  box-shadow: 3px 4px 15px -8px rgba(0, 0, 0, 0.71);
 `;
 
 const Header = styled.div`
@@ -64,8 +66,6 @@ const Links = styled.div`
 `;
 
 const Projects = ({ projects }: ProjectsProps) => {
-  console.log(projects);
-
   return (
     <Container>
       {projects.map((project) => (
