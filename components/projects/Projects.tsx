@@ -75,17 +75,19 @@ const Projects = ({ projects }: ProjectsProps) => {
             <Tech>
               {project.category.map((cata) => (
                 <>
-                  <p>{cata}</p>
+                  <p key={cata}>{cata}</p>
                   <span>*</span>
                 </>
               ))}
             </Tech>
           </Header>
 
-          <video autoPlay loop muted>
-            <source src={project.demowebm.url} type="video/webm" />
-            <source src={project.demomp4.url} type="video/mp4" />
-          </video>
+          <>
+            <video autoPlay loop muted poster={project.poster.url}>
+              <source src={project.demowebm.url} type="video/webm" />
+              <source src={project.demomp4.url} type="video/mp4" />
+            </video>
+          </>
 
           <Description>
             <h2>{project.name}</h2>

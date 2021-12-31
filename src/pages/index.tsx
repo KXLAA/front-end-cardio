@@ -28,11 +28,14 @@ export const getStaticProps = async () => {
 
   const query = gql`
     query {
-      projects {
+      projects(orderBy: createdAt_DESC) {
         id
         name
         category
         codeLink
+        poster {
+          url
+        }
         liveLink
         demomp4 {
           url
