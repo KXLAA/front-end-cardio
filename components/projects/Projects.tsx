@@ -1,11 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ProjectsProps } from 'types/types';
+import device from 'components/common/MediaQueries';
 
 const Container = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+
+  @media ${device.laptopS} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${device.mobile} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const Card = styled.div`
@@ -36,6 +45,16 @@ const Tech = styled.div`
   gap: 0.5rem;
   font-weight: 700;
 
+  @media ${device.tablet} {
+    display: none;
+  }
+
+  p {
+    @media ${device.laptop} {
+      font-size: 0.8rem;
+    }
+  }
+
   span {
     color: yellow;
   }
@@ -48,6 +67,14 @@ const Description = styled.div`
     font-size: 2.5rem;
     font-weight: 600;
     color: yellow;
+
+    @media ${device.laptop} {
+      font-size: 2rem;
+    }
+
+    @media ${device.tablet} {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -59,6 +86,13 @@ const Links = styled.div`
     font-weight: 600;
     border-bottom: solid 2px yellow;
     transition: all 0.3s ease;
+    @media ${device.laptop} {
+      font-size: 1.2rem;
+    }
+
+    @media ${device.tablet} {
+      font-size: 1rem;
+    }
     &:hover {
       border-color: #39ff14;
     }

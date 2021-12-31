@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import device from 'components/common/MediaQueries';
 
 const Container = styled.div`
   display: flex;
@@ -30,6 +31,15 @@ const Tags = styled.button`
   border-radius: 100px;
   cursor: pointer;
   background: none;
+
+  @media ${device.tablet} {
+    font-size: 1.5rem;
+  }
+
+  @media ${device.mobile} {
+    font-size: 1.2rem;
+  }
+
   &:hover:not(:disabled),
   &:disabled:not(:disabled),
   &:focus {

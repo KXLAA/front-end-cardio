@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import device from 'components/common/MediaQueries';
 
 const Container = styled.header`
   padding-bottom: 2rem;
@@ -11,11 +12,37 @@ const Title = styled.div`
   h1 {
     font-size: 4rem;
     font-weight: 600;
+
+    @media ${device.laptopS} {
+      font-size: 3.5rem;
+    }
+
+    @media ${device.tablet} {
+      font-size: 2.5rem;
+    }
+
+    @media ${device.mobile} {
+      font-size: 2rem;
+    }
   }
 
   p {
     font-size: 2rem;
     font-weight: 300;
+
+    @media ${device.laptopS} {
+      padding-top: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    @media ${device.tablet} {
+      font-size: 1.2rem;
+    }
+
+    @media ${device.mobile} {
+      width: 80%;
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -30,6 +57,10 @@ const Count = styled.div`
   font-weight: 700;
   align-items: center;
   justify-content: center;
+
+  @media ${device.laptopS} {
+    display: none;
+  }
 `;
 
 const Number = styled.p`
@@ -57,7 +88,11 @@ const Kola = styled.a`
   font-weight: 700;
 `;
 
-const Header = ({ length }) => {
+interface HeaderProps {
+  length: number;
+}
+
+const Header = ({ length }: HeaderProps) => {
   return (
     <>
       <Container>
