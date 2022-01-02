@@ -56,21 +56,20 @@ const Tags = styled.button`
   }
 `;
 
-const Sort = () => {
+interface SortProps {
+  filter: (cata: string) => void;
+}
+const Sort = ({ filter }: SortProps) => {
   return (
     <Container>
-      <Tags>OLDEST</Tags>
-      <Tags>LATEST</Tags>
-      <Tags>REACT</Tags>
-      <Tags>NEXT.JS</Tags>
-      <Tags>GRAPHQL</Tags>
-      <Tags>NODE.JS</Tags>
-      <Tags>JAVASCRIPT</Tags>
-      <Tags>TYPESCRIPT</Tags>
-      <Tags>HTML</Tags>
-      <Tags>CSS</Tags>
-      <Tags>SCSS</Tags>
-      <Tags>ALL</Tags>
+      <Tags onClick={() => filter(`ALL`)}>ALL</Tags>
+      <Tags onClick={() => filter(`REACT`)}>REACT</Tags>
+      <Tags onClick={() => filter(`NEXT-JS`)}>NEXT.JS</Tags>
+      <Tags onClick={() => filter(`GRAPHQL`)}>GRAPHQL</Tags>
+      <Tags onClick={() => filter(`JAVASCRIPT`)}>JAVASCRIPT</Tags>
+      <Tags onClick={() => filter(`TYPESCRIPT`)}>TYPESCRIPT</Tags>
+      <Tags onClick={() => filter(`HTML`)}>HTML</Tags>
+      <Tags onClick={() => filter(`SCSS`)}>SCSS</Tags>
     </Container>
   );
 };

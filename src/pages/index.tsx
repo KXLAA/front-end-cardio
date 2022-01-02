@@ -5,13 +5,26 @@ import Header from 'components/projects/Header';
 import Sort from 'components/projects/Sort';
 import Projects from 'components/projects/Projects';
 import { ProjectsProps } from 'types/types';
+import { useState } from 'react';
 
 export default function Home({ projects }: ProjectsProps) {
+  const [sorted, setSorted] = useState(projects);
+
+  const filter = (cata = `ALL`) => {
+    if (cata === `ALL`) {
+      return setSorted(projects);
+    } else {
+      return setSorted(
+        projects.filter((project) => project.category.includes(cata)),
+      );
+    }
+  };
+
   return (
     <Layout>
       <Header length={projects.length} />
-      <Sort />
-      <Projects projects={projects} />
+      <Sort filter={filter} />
+      <Projects projects={sorted} />
     </Layout>
   );
 }
