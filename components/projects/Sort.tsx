@@ -28,7 +28,7 @@ const Tags = styled.button`
   padding: 0px 16px;
   color: #e4e4e4;
   border: 2px solid;
-  border-radius: 100px;
+  border-radius: 6.25rem;
   cursor: pointer;
   background: none;
 

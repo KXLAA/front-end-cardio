@@ -50,9 +50,9 @@ const Count = styled.div`
   background-color: #161616;
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  border-radius: 16px;
-  width: 200px;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 12.5rem;
   aspect-ratio: 1/1;
   font-weight: 700;
   align-items: center;

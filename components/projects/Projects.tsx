@@ -21,17 +21,17 @@ const Card = styled.div`
   aspect-ratio: 1/1;
   width: 100%;
   background-color: #161616;
-  border-radius: 16px;
+  border-radius: 1rem;
   -webkit-box-shadow: 3px 4px 15px -8px rgba(0, 0, 0, 0.71);
   padding-bottom: 1.5rem;
   box-shadow: 3px 4px 15px -8px rgba(0, 0, 0, 0.71);
 `;
 
 const Header = styled.div`
-  border-radius: 16px;
+  border-radius: 1rem;
   display: flex;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 1rem 1.5rem;
   color: yellow;
   font-size: 1.5rem;
   font-weight: 700;
@@ -50,8 +50,8 @@ const Tech = styled.div`
 
 const Tag = styled.div`
   display: flex;
-  padding: 4px 10px;
-  border-radius: 8px;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
@@ -74,7 +74,7 @@ const Tag = styled.div`
 `;
 
 const Description = styled.div`
-  padding: 24px;
+  padding: 1.5rem;
 
   h2 {
     font-size: 2.5rem;
@@ -93,7 +93,7 @@ const Description = styled.div`
 
 const Links = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
   a {
     font-size: 1.5rem;
     font-weight: 600;
