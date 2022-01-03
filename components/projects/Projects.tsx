@@ -23,6 +23,7 @@ const Card = styled.div`
   background-color: #161616;
   border-radius: 16px;
   -webkit-box-shadow: 3px 4px 15px -8px rgba(0, 0, 0, 0.71);
+  padding-bottom: 1.5rem;
   box-shadow: 3px 4px 15px -8px rgba(0, 0, 0, 0.71);
 `;
 
@@ -31,32 +32,44 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 16px 24px;
-`;
-
-const Indicators = styled.div`
-  border-radius: 100px;
-  width: 20px;
-  height: 20px;
-  background-color: yellow;
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: 700;
 `;
 
 const Tech = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
   font-weight: 700;
+  padding-bottom: 0.5rem;
 
-  @media ${device.tablet} {
+  @media ${device.mobileS} {
     display: none;
   }
+`;
 
-  p {
-    @media ${device.laptop} {
-      font-size: 0.7rem;
-    }
+const Tag = styled.div`
+  display: flex;
+  padding: 4px 10px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #ffffff;
+  background: #222222;
+  width: fit-content;
+
+  @media ${device.laptop} {
+    font-size: 0.7rem;
   }
 
-  span {
-    color: yellow;
+  @media ${device.tablet} {
+    font-size: 0.55rem;
+  }
+
+  @media ${device.mobile} {
+    font-size: 0.6rem;
   }
 `;
 
@@ -91,10 +104,10 @@ const Links = styled.div`
     }
 
     @media ${device.tablet} {
-      font-size: 1rem;
+      font-size: 1.3rem;
     }
     &:hover {
-      border-color: #39ff14;
+      color: yellow;
     }
   }
 `;
@@ -104,26 +117,22 @@ const Projects = ({ projects }: ProjectsProps) => {
     <Container>
       {projects.map((project) => (
         <Card key={project.id}>
-          <Header>
-            <Indicators />
-            <Tech>
-              {project.category.map((cata) => (
-                <>
-                  <p key={cata}>{cata}</p>
-                  <span>*</span>
-                </>
-              ))}
-            </Tech>
-          </Header>
+          <Header>⌘</Header>
 
-          <>
+          <a href={project.liveLink} target="_blank" rel="noreferrer">
             <video autoPlay loop muted poster={project.poster.url}>
               <source src={project.demowebm.url} type="video/webm" />
               <source src={project.demomp4.url} type="video/mp4" />
             </video>
-          </>
+          </a>
 
           <Description>
+            <Tech>
+              {project.category.map((cata) => (
+                <Tag key={cata}>{cata}</Tag>
+              ))}
+            </Tech>
+
             <h2>{project.name}</h2>
             <Links>
               <a href={project.codeLink} target="_blank" rel="noreferrer">
