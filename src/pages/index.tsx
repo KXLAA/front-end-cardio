@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { gql, GraphQLClient } from 'graphql-request';
 import Layout from 'components/common/Layout';
+import Head from 'next/head';
 import Header from 'components/projects/Header';
 import Sort from 'components/projects/Sort';
 import Projects from 'components/projects/Projects';
@@ -22,6 +23,15 @@ export default function Home({ projects }: ProjectsProps) {
 
   return (
     <Layout>
+      <Head>
+        <title>FRONTEND CARDIO 💪</title>
+        <meta
+          name="description"
+          content="KOLA'S CATALOGUE OF PROJECTS, CHALLENGES & EXPERIMENTS"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <Header length={projects.length} />
       <Sort filter={filter} />
       <Projects projects={sorted} />
