@@ -3,9 +3,9 @@
 <p align="center">
   <img src="https://ucarecdn.com/a85db1c9-4652-485e-b507-41997a7106e9/frontendcardio.webp" alt="Front End Cardio">
 </p>
-Hi, thanks for stopping by, front end cardio is my catalogue of projects, challenges & experiments. Decided to make a website that curates some of the best stuff i have built during my self learning journey.
+Hi, thanks for stopping by! Front-End Cardio is a catalogue of projects, challenges & experiments. I decided to make a website that curates some of the best stuff I have built during my self-learning journey. 
 
-The tech stack i use is fairly consistent, so in this website you would see projects with built with the following technologies:
+The tech stack I use is fairly consistent, so on this website, you would see projects built with the following technologies:
 
 - ⚡️ Next.js
 - ⚛️ React
